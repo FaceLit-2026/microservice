@@ -1,0 +1,24 @@
+name: facelit-embedding-service
+
+services:
+  embedding-service:
+    init: true
+    build: .
+    env_file:
+      - .env
+    environment:
+      PRELOAD_MODEL: "true"
+    ports:
+      - "${SERVICE_PORT:-8090}:8090"
+    volumes:
+      - insightface-models:/home/facelit/.insightface
+    networks:
+      - facelit-db-network
+
+volumes:
+  insightface-models:
+
+networks:
+  facelit-db-network:
+    external: true
+    name: facelit-docker-compose_default

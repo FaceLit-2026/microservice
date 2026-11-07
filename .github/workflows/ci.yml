@@ -34,8 +34,8 @@ jobs:
       - name: Checkout reviewed database schema
         uses: actions/checkout@v4
         with:
-          repository: FaceID-Proyect-2026/FaceLit-DB
-          ref: 74c1af01ccc8690080f746b745a037555a85547e
+          repository: FaceLit-2026/db
+          ref: 0de3809fa1f5459f39ccdfd18005696857813be6
           path: database
 
       - name: Install native build and runtime libraries
